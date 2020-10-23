@@ -32,7 +32,7 @@ class Drivetrain:
     def __init__(self):
         #Create motors (Controllers are REV Spark Maxes)
         
-
+        self.wheee = rev.CANSparkMax(1);
 
     def drive(self, speed, turn):
         '''Method to call when operator moves the joystick
