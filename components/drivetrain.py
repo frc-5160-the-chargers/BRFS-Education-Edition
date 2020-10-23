@@ -2,27 +2,37 @@ import magicbot
 import wpilib
 import wpilib.drive
 import rev
+import ctre
 
 class Drivetrain:
+
+
+    #MOTOR CLASSES
+    # There are many different classes of motors, because there are many different types of motors in real life, with varying use cases.
+    # Programmers of the robot have to work with the hardware provided and use motor classes accordingly.
+    #
+    # The motors that are currently on the robot's drivetrain are REV Spark Maxes. Their class is the rev.CANSparkMax class, which is used like this:
+    # self.motorLeft1 = rev.CANSparkMax(motor_number); self.motorLeft1.set(speed) 
+    # NOTE: speed values passed to any motor must be within [-1,1]; For safety, set the motor power between -0.01 and 0.01
+    # 
+    # There are other types of motors that (if you have time) we may let you use, such as the intake or the color wheel motors. Those motors are talonSRXs, which use the ctre.TalonSRX class:
+    # self.otherMotor = ctre.TalonSRX(motor_number); self.otherMotor.set(speed)
+
+
+    #The motor numbers fot the main drive motors are:
+    # Front_left:
+    # Back_left: 
+    # Front_right: 
+    # Back_right:
+
+    #if you want to set other motor powers, ask Colin / Harrison for the motor numbers
+
+    
+
     def __init__(self):
         #Create motors (Controllers are REV Spark Maxes)
-        self.motorLeft1 = rev.CANSparkMax(00000)
-        self.motorLeft2 = rev.CANSparkMax(00000)
-        self.motorRight1 = rev.CANSparkMax(00000)
-        self.motorRight2 = rev.CANSparkMax(00000)
+        
 
-        #Create speed controller groups so motors on the same side of the drivetrain behave the same
-        self.leftMotors = wpilib.SpeedControllerGroup(self.motorLeft1, self.motorLeft2)
-        self.rightMotors = wpilib.SpeedControllerGroup(self.motorRight1, self.motorRight2)
-
-        self.speed = 0 #How fast to move forward (or backward if negative)
-        self.turn = 0 #How much to turn
-
-        #Create drivetrain
-        self.dt = wpilib.drive.DifferentialDrive(
-            self.leftMotors,
-            self.rightMotors
-        )
 
     def drive(self, speed, turn):
         '''Method to call when operator moves the joystick
@@ -36,4 +46,5 @@ class Drivetrain:
     
     def execute(self):
         '''Runs every control loop'''
-        self.dt.arcadeDrive(self.speed, self.turn) #Just tells it to drive lul
+        #set motor powers
+        #NOTE: MAXIMUM POWER IS 0.01 FOR SAFETY
