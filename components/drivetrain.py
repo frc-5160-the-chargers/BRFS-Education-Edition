@@ -20,10 +20,10 @@ class Drivetrain:
 
 
     #The motor numbers fot the main drive motors are:
-    # Front_left:
-    # Back_left: 
-    # Front_right: 
-    # Back_right:
+    # Front_left: 1
+    # Back_left: 2
+    # Front_right: 3
+    # Back_right: 4
 
     #if you want to set other motor powers, ask Colin / Harrison for the motor numbers
 
