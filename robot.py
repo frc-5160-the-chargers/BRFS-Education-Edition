@@ -20,3 +20,4 @@ class MyRobot(magicbot.MagicRobot):
 
 if __name__ == "__main__":
     wpilib.run(MyRobot)  # Run the robot
+#I'm not exactly sure what we're supposed to do so here's my "contribution" for now? 
