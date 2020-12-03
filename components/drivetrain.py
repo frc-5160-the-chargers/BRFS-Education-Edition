@@ -6,10 +6,10 @@ import rev
 class Drivetrain:
     def __init__(self):
         #Create motors (Controllers are REV Spark Maxes)
-        self.motorLeft1 = rev.CANSparkMax(00000)
-        self.motorLeft2 = rev.CANSparkMax(00000)
-        self.motorRight1 = rev.CANSparkMax(00000)
-        self.motorRight2 = rev.CANSparkMax(00000)
+        self.motorLeft1 = rev.CANSparkMax(1, rev.MotorType.kBrushless)
+        self.motorLeft2 = rev.CANSparkMax(2, rev.MotorType.kBrushless)
+        self.motorRight1 = rev.CANSparkMax(3, rev.MotorType.kBrushless)
+        self.motorRight2 = rev.CANSparkMax(4, rev.MotorType.kBrushless)
 
         #Create speed controller groups so motors on the same side of the drivetrain behave the same
         self.leftMotors = wpilib.SpeedControllerGroup(self.motorLeft1, self.motorLeft2)
