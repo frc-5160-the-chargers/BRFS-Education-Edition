@@ -12,7 +12,7 @@ class Drivetrain:
     # Programmers of the robot have to work with the hardware provided and use motor classes accordingly.
     #
     # The motors that are currently on the robot's drivetrain are REV Spark Maxes. Their class is the rev.CANSparkMax class, which is used like this:
-    # self.motorLeft1 = rev.CANSparkMax(motor_number); self.motorLeft1.set(speed) 
+    # self.motorLeft1 = rev.CANSparkMax(motor_number, rev.MotorType.kBrushless); self.motorLeft1.set(speed) 
     # NOTE: speed values passed to any motor must be within [-1,1]; For safety, set the motor power between -0.01 and 0.01
     # 
     # There are other types of motors that (if you have time) we may let you use, such as the intake or the color wheel motors. Those motors are talonSRXs, which use the ctre.TalonSRX class:
