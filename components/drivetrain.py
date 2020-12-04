@@ -42,9 +42,7 @@ class Drivetrain:
         self.speed = 0
         self.turn = 0
 
-        self.dt = wpilib.drive.DifferentialDrive(
-            self.leftM,
-            self.rightM
+        self.dt = wpilib.drive.DifferentialDrive(self.leftM, self.rightM)
 
 
     def drive(self, speed, turn):
