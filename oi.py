@@ -15,6 +15,9 @@ class OI:
     def __init__(self):
         """Runs once at the beginning - set up variables"""
         # Create the Controller - see above
+        self.xbox = wpilib.XboxController(1)
+        self.inSpeed = 0 # this should also do *something*
+        self.inTurn = 0 # this should do *something*
 
         # set value variables; EX: self.inSpeed = 0
 
@@ -35,6 +38,7 @@ class OI:
 
     def execute(self):
         """Runs every control loop"""
-
+        self.inSpeed = self.XboxController.getX()
+        self.inTurn = self.XboxController.getY()
         # set values to operator input
         # EX: self.inSpeed = self.joystick.getX() or self.a_pressed = self.xbox.getAButton()
