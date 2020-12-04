@@ -28,7 +28,6 @@ class Drivetrain:
     #if you want to set other motor powers, ask Colin / Harrison for the motor numbers
 
     
-
     def __init__(self):
         #Create motors (Controllers are REV Spark Maxes)
         self.motorL1 = rev.CANSparkMax(00000)
@@ -36,14 +35,13 @@ class Drivetrain:
         self.motorR1 = rev.CANSparkMax(00000)
         self.motorR2 = rev.CANSparkMax(00000)
 
-        #Create speed controller groups so motors on the same side of the drivetrain behave the same
+        #idk what i'm doing, after comparing to main, i j added these oop
         self.leftM = wpilib.SpeedControllerGroup(self.motorL1, self.motorL2)
         self.rightM = wpilib.SpeedControllerGroup(self.motorR1, self.motorR2)
 
         self.speed = 0
         self.turn = 0
 
-        #Create drivetrain
         self.dt = wpilib.drive.DifferentialDrive(
             self.leftM,
             self.rightM
