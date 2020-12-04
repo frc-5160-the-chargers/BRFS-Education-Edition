@@ -39,6 +39,6 @@ class OI:
         '''Runs every control loop'''
 
         #set values to operator input; EX: self.inSpeed = self.joystick.getX() or self.a_pressed = self.xbox.getAButton
-		self.inSpeed = self.joystick.getX()
-        self.inTurn = self.joystick.getY()
+		self.inSpeed = self.xbox.getY(wpilib.XboxController.Hand.kRightHand)
+        self.inTurn = self.xbox.getX(wpilib.XboxController.Hand.kRightHand)
         self.a_pressed = self.xbox.getAButton() #needed?
