@@ -30,10 +30,10 @@ class Drivetrain:
     
     def __init__(self):
         #Create motors (Controllers are REV Spark Maxes)
-        self.motorL1 = rev.CANSparkMax(00000)
-        self.motorL2 = rev.CANSparkMax(00000)
-        self.motorR1 = rev.CANSparkMax(00000)
-        self.motorR2 = rev.CANSparkMax(00000)
+        self.motorL1 = rev.CANSparkMax(1,rev.Motortype.kbrushless)
+        self.motorL2 = rev.CANSparkMax(2,rev.Motortype.kbrushless)
+        self.motorR1 = rev.CANSparkMax(3,rev.Motortype.kbrushless)
+        self.motorR2 = rev.CANSparkMax(4,rev.Motortype.kbrushless)
 
         #idk what i'm doing, after comparing to main, i j added these oop
         self.leftM = wpilib.SpeedControllerGroup(self.motorL1, self.motorL2)
