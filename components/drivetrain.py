@@ -37,16 +37,16 @@ class Drivetrain:
         self.motorR2 = rev.CANSparkMax(00000)
 
         #Create speed controller groups so motors on the same side of the drivetrain behave the same
-        self.leftMotors = wpilib.SpeedControllerGroup(self.motorL1, self.motorL2)
-        self.rightMotors = wpilib.SpeedControllerGroup(self.motorR1, self.motorR2)
+        self.leftM = wpilib.SpeedControllerGroup(self.motorL1, self.motorL2)
+        self.rightM = wpilib.SpeedControllerGroup(self.motorR1, self.motorR2)
 
         self.speed = 0
         self.turn = 0
 
         #Create drivetrain
         self.dt = wpilib.drive.DifferentialDrive(
-            self.leftMotors,
-            self.rightMotors
+            self.leftM,
+            self.rightM
 
 
     def drive(self, speed, turn):
