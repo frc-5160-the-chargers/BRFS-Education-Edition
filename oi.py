@@ -17,10 +17,12 @@ class OI:
     def __init__(self):
         '''Runs once at the beginning - set up variables'''
         #Create the Controller - see above
-
+		self.joystick = wpilib.Joystick(1) #joystick
+        self.xbox = wpilib.XboxCOntroller(1) #xbox
 
         #set value variables; EX: self.inSpeed = 0
-
+        self.inSpeed = 0
+        self.inTurn = 0
 
     # Pulling User Input:
     ## During the control loop, you can get the values of buttons/axes on the joystick/conroller by calling various methods of the joystick and the xbox controller. Some examples are below:
@@ -36,4 +38,7 @@ class OI:
     def execute(self):
         '''Runs every control loop'''
 
-        #set values to operator input; EX: self.inSpeed = self.joystick.getX() or self.a_pressed = self.xbox.getAButton()
+        #set values to operator input; EX: self.inSpeed = self.joystick.getX() or self.a_pressed = self.xbox.getAButton
+		self.inSpeed = self.joystick.getX()
+        self.inTurn = self.joystick.getY()
+        self.a_pressed = self.xbox.getAButton() #needed?

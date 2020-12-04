@@ -40,8 +40,8 @@ class Drivetrain:
         self.leftMotors = wpilib.SpeedControllerGroup(self.motorL1, self.motorL2)
         self.rightMotors = wpilib.SpeedControllerGroup(self.motorR1, self.motorR2)
 
-        self.speed = 0 #How fast to move forward (or backward if negative)
-        self.turn = 0 #How much to turn
+        self.speed = 0
+        self.turn = 0
 
         #Create drivetrain
         self.dt = wpilib.drive.DifferentialDrive(
