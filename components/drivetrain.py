@@ -4,8 +4,17 @@ import wpilib.drive
 import rev
 import ctre
 
+from utils.motor_controller import MotorController
+
 
 class Drivetrain:
+
+    front_left: MotorController
+    front_right: MotorController
+    back_left: MotorController
+    back_right: MotorController
+
+    TURN_MULTIPLIER: float = 1.0
 
     # MOTOR CLASSES There are many different classes of motors, because there are many different types of motors in
     # real life, with varying use cases. Programmers of the robot have to work with the hardware provided and use
@@ -47,3 +56,19 @@ class Drivetrain:
         """Runs every control loop"""
         # set motor powers
         # NOTE: MAXIMUM POWER IS 0.01 FOR SAFETY
+
+        front_left = self.speed + (self.TURN_MULTIPLIER * self.turn)
+        back_left = self.speed + (self.TURN_MULTIPLIER * self.turn)
+        front_right = self.speed - (self.TURN_MULTIPLIER * self.turn)
+        back_right = self.speed - (self.TURN_MULTIPLIER * self.turn)
+
+        max_power = max(front_left, back_left, front_right, back_right)
+
+        self.back_left.set(max_power * front_right)
+        self.front_left.set(max_power * front_right)
+        self.front_right.set(max_power * front_right)
+        self.back_right.set(max_power * front_right)
+
+
+
+
