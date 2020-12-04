@@ -5,7 +5,7 @@ from wpilib.interfaces._interfaces import SpeedController
 
 class MotorController(SpeedController):
 
-    def __init__(self, motor, maximum_safe_speed: float = 0.01):
+    def __init__(self, motor, maximum_safe_speed: float = 0.5):
         super().__init__()
         self.motor = motor
         self.maximum_safe_speed = maximum_safe_speed
@@ -40,6 +40,6 @@ class MotorController(SpeedController):
 
 
 class SparkMaxMotorController(MotorController):
-    def __init__(self, motor_number, maximum_safe_speed: float = 0.01):
+    def __init__(self, motor_number, maximum_safe_speed: float = 0.5):
         motor = rev.CANSparkMax(motor_number)
         super().__init__(motor, maximum_safe_speed)

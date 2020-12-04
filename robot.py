@@ -22,7 +22,7 @@ class MyRobot(magicbot.MagicRobot):
         """Loops while teleop is enabled"""
 
         # THIS IS PROBABLY TOO SLOW, FIX DURING TESTING TOMORROW
-        self.drivetrain.drive(self.oi.inSpeed / 100, self.oi.inTurn / 100)  # Drive SLOWLY so things don't break
+        self.drivetrain.drive(self.oi.inSpeed / 2, self.oi.inTurn / 2)  # Drive SLOWLY so things don't break
 
 
 if __name__ == "__main__":

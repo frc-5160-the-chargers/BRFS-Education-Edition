@@ -64,10 +64,10 @@ class Drivetrain:
 
         max_power = max(front_left, back_left, front_right, back_right)
 
-        self.back_left.set(max_power * front_right)
-        self.front_left.set(max_power * front_right)
+        self.back_left.set(max_power * back_left)
+        self.front_left.set(max_power * front_left)
         self.front_right.set(max_power * front_right)
-        self.back_right.set(max_power * front_right)
+        self.back_right.set(max_power * back_right)
 
 
 
